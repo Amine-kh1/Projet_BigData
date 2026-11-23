@@ -1,0 +1,1817 @@
+{
+  "executed_at_utc": "2026-11-23T00:10:07.496955+00:00",
+  "environment": {
+    "spark_version": "3.5.3",
+    "python_version": "3.10.12",
+    "master": "spark://spark-master:7077",
+    "app_name": "Jalon1-Orders-Batch",
+    "application_id": "app-20261123001000-0001",
+    "default_parallelism": 4,
+    "spark_ui_url": "http://jupyter:4040",
+    "shuffle_partitions": "4"
+  },
+  "paths": {
+    "orders": "s3a://lake/bronze/history/orders_history.jsonl",
+    "restaurants": "s3a://lake/reference/restaurants.json",
+    "silver": "s3a://lake/silver/orders_history"
+  },
+  "quality": {
+    "input_lines": 50000,
+    "valid_rows_rdd": 50000,
+    "valid_rows_dataframe": 50000,
+    "rejected_rows": 0,
+    "restaurant_count": 200,
+    "missing_restaurant_events": 0,
+    "city_mismatch_events": 0,
+    "conflicting_duplicate_keys": 0,
+    "duplicates_removed": 1000,
+    "silver_rows": 49000
+  },
+  "raw_city_kpis": [
+    {
+      "city": "Casablanca",
+      "delivered_events": 2874,
+      "revenue_mad": "651760.89",
+      "average_basket_mad": "226.78"
+    },
+    {
+      "city": "Fès",
+      "delivered_events": 3068,
+      "revenue_mad": "704426.26",
+      "average_basket_mad": "229.60"
+    },
+    {
+      "city": "Marrakech",
+      "delivered_events": 2967,
+      "revenue_mad": "668888.09",
+      "average_basket_mad": "225.44"
+    },
+    {
+      "city": "Rabat",
+      "delivered_events": 3039,
+      "revenue_mad": "687080.85",
+      "average_basket_mad": "226.09"
+    },
+    {
+      "city": "Tanger",
+      "delivered_events": 2949,
+      "revenue_mad": "678378.75",
+      "average_basket_mad": "230.04"
+    }
+  ],
+  "raw_top5_restaurants": [
+    {
+      "restaurant_id": "R-069",
+      "delivered_events": 100
+    },
+    {
+      "restaurant_id": "R-003",
+      "delivered_events": 99
+    },
+    {
+      "restaurant_id": "R-169",
+      "delivered_events": 96
+    },
+    {
+      "restaurant_id": "R-014",
+      "delivered_events": 95
+    },
+    {
+      "restaurant_id": "R-173",
+      "delivered_events": 94
+    }
+  ],
+  "raw_revenue_category_city": [
+    {
+      "city": "Casablanca",
+      "category": "burger",
+      "revenue_mad": "127957.92",
+      "delivered_events": 588
+    },
+    {
+      "city": "Casablanca",
+      "category": "marocain",
+      "revenue_mad": "135088.31",
+      "delivered_events": 586
+    },
+    {
+      "city": "Casablanca",
+      "category": "pizza",
+      "revenue_mad": "124912.81",
+      "delivered_events": 567
+    },
+    {
+      "city": "Casablanca",
+      "category": "sushi",
+      "revenue_mad": "133584.89",
+      "delivered_events": 565
+    },
+    {
+      "city": "Casablanca",
+      "category": "tacos",
+      "revenue_mad": "130216.96",
+      "delivered_events": 568
+    },
+    {
+      "city": "Fès",
+      "category": "burger",
+      "revenue_mad": "147902.30",
+      "delivered_events": 635
+    },
+    {
+      "city": "Fès",
+      "category": "marocain",
+      "revenue_mad": "146621.41",
+      "delivered_events": 641
+    },
+    {
+      "city": "Fès",
+      "category": "pizza",
+      "revenue_mad": "140634.18",
+      "delivered_events": 610
+    },
+    {
+      "city": "Fès",
+      "category": "sushi",
+      "revenue_mad": "131854.35",
+      "delivered_events": 584
+    },
+    {
+      "city": "Fès",
+      "category": "tacos",
+      "revenue_mad": "137414.02",
+      "delivered_events": 598
+    },
+    {
+      "city": "Marrakech",
+      "category": "burger",
+      "revenue_mad": "144371.95",
+      "delivered_events": 645
+    },
+    {
+      "city": "Marrakech",
+      "category": "marocain",
+      "revenue_mad": "123542.52",
+      "delivered_events": 552
+    },
+    {
+      "city": "Marrakech",
+      "category": "pizza",
+      "revenue_mad": "136782.01",
+      "delivered_events": 610
+    },
+    {
+      "city": "Marrakech",
+      "category": "sushi",
+      "revenue_mad": "123910.27",
+      "delivered_events": 551
+    },
+    {
+      "city": "Marrakech",
+      "category": "tacos",
+      "revenue_mad": "140281.34",
+      "delivered_events": 609
+    },
+    {
+      "city": "Rabat",
+      "category": "burger",
+      "revenue_mad": "134984.79",
+      "delivered_events": 601
+    },
+    {
+      "city": "Rabat",
+      "category": "marocain",
+      "revenue_mad": "139844.52",
+      "delivered_events": 622
+    },
+    {
+      "city": "Rabat",
+      "category": "pizza",
+      "revenue_mad": "135031.92",
+      "delivered_events": 606
+    },
+    {
+      "city": "Rabat",
+      "category": "sushi",
+      "revenue_mad": "140277.98",
+      "delivered_events": 612
+    },
+    {
+      "city": "Rabat",
+      "category": "tacos",
+      "revenue_mad": "136941.64",
+      "delivered_events": 598
+    },
+    {
+      "city": "Tanger",
+      "category": "burger",
+      "revenue_mad": "139877.91",
+      "delivered_events": 597
+    },
+    {
+      "city": "Tanger",
+      "category": "marocain",
+      "revenue_mad": "136715.71",
+      "delivered_events": 577
+    },
+    {
+      "city": "Tanger",
+      "category": "pizza",
+      "revenue_mad": "132252.61",
+      "delivered_events": 590
+    },
+    {
+      "city": "Tanger",
+      "category": "sushi",
+      "revenue_mad": "133169.28",
+      "delivered_events": 579
+    },
+    {
+      "city": "Tanger",
+      "category": "tacos",
+      "revenue_mad": "136363.24",
+      "delivered_events": 606
+    }
+  ],
+  "clean_city_kpis": [
+    {
+      "city": "Casablanca",
+      "revenue_mad": "638605.86",
+      "delivered_events": 2813,
+      "average_basket_mad": "227.02"
+    },
+    {
+      "city": "Fès",
+      "revenue_mad": "692170.23",
+      "delivered_events": 3015,
+      "average_basket_mad": "229.58"
+    },
+    {
+      "city": "Marrakech",
+      "revenue_mad": "658352.45",
+      "delivered_events": 2922,
+      "average_basket_mad": "225.31"
+    },
+    {
+      "city": "Rabat",
+      "revenue_mad": "674987.67",
+      "delivered_events": 2989,
+      "average_basket_mad": "225.82"
+    },
+    {
+      "city": "Tanger",
+      "revenue_mad": "664926.69",
+      "delivered_events": 2887,
+      "average_basket_mad": "230.32"
+    }
+  ],
+  "reconciliation_rdd_dataframe_sql": true,
+  "distance_bands": {
+    "court": 7945,
+    "long": 28120,
+    "moyen": 13935
+  },
+  "benchmark": {
+    "repetitions": 3,
+    "method": "Un tour de chauffe puis tours alternés ; agrégats collectés ; sources non persistées ; cache OS/JVM potentiellement chaud. Même CA brut DELIVERED, sérialisation comprise.",
+    "api": {
+      "RDD": {
+        "samples_seconds": [
+          3.7741330060000564,
+          4.6912308969999685,
+          8.377382764999993
+        ],
+        "median_seconds": 4.6912308969999685
+      },
+      "DataFrame": {
+        "samples_seconds": [
+          3.1419297560000814,
+          2.4811637289999453,
+          3.0854757189999873
+        ],
+        "median_seconds": 3.0854757189999873
+      },
+      "SQL": {
+        "samples_seconds": [
+          2.683828812999991,
+          3.4888548489999494,
+          1.4757858089999445
+        ],
+        "median_seconds": 2.683828812999991
+      }
+    },
+    "distance": {
+      "python_udf": {
+        "samples_seconds": [
+          0.6022287260000212,
+          0.35853569400001106,
+          0.6476033379999535
+        ],
+        "median_seconds": 0.6022287260000212
+      },
+      "native_when": {
+        "samples_seconds": [
+          0.4225768410000228,
+          0.5019646969999485,
+          0.6085197140000673
+        ],
+        "median_seconds": 0.5019646969999485
+      }
+    },
+    "distance_method": "Même colonne distance_km persistée et matérialisée ; groupBy(distance_band).count().collect() force le calcul de la bande ; un tour de chauffe puis alternance."
+  },
+  "join": {
+    "broadcast_hint": true,
+    "physical_strategy": "BroadcastHashJoin"
+  },
+  "actions": [
+    {
+      "label": "quality_input_lines",
+      "seconds": 31.54466422400003,
+      "job_ids": [
+        0
+      ],
+      "stage_ids": [
+        0
+      ],
+      "stage_count": 1,
+      "stages": [
+        {
+          "stage_id": 0,
+          "tasks": 2,
+          "completed_tasks": 2,
+          "failed_tasks": 0,
+          "name": "count at /workspace/src/analysis.py:103"
+        }
+      ]
+    },
+    {
+      "label": "quality_valid_rdd",
+      "seconds": 20.3197013219999,
+      "job_ids": [
+        1
+      ],
+      "stage_ids": [
+        1
+      ],
+      "stage_count": 1,
+      "stages": [
+        {
+          "stage_id": 1,
+          "tasks": 2,
+          "completed_tasks": 2,
+          "failed_tasks": 0,
+          "name": "count at /workspace/src/analysis.py:103"
+        }
+      ]
+    },
+    {
+      "label": "rdd_revenue_by_city",
+      "seconds": 12.769289449999974,
+      "job_ids": [
+        2
+      ],
+      "stage_ids": [
+        2,
+        3
+      ],
+      "stage_count": 2,
+      "stages": [
+        {
+          "stage_id": 2,
+          "tasks": 2,
+          "completed_tasks": 2,
+          "failed_tasks": 0,
+          "name": "reduceByKey at /workspace/src/analysis.py:163"
+        },
+        {
+          "stage_id": 3,
+          "tasks": 4,
+          "completed_tasks": 4,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        }
+      ]
+    },
+    {
+      "label": "rdd_sum_count_one_pass",
+      "seconds": 4.630343411000013,
+      "job_ids": [
+        3
+      ],
+      "stage_ids": [
+        4,
+        5
+      ],
+      "stage_count": 2,
+      "stages": [
+        {
+          "stage_id": 4,
+          "tasks": 2,
+          "completed_tasks": 2,
+          "failed_tasks": 0,
+          "name": "reduceByKey at /workspace/src/analysis.py:132"
+        },
+        {
+          "stage_id": 5,
+          "tasks": 4,
+          "completed_tasks": 4,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        }
+      ]
+    },
+    {
+      "label": "rdd_top5",
+      "seconds": 5.822968988000071,
+      "job_ids": [
+        4
+      ],
+      "stage_ids": [
+        6,
+        7
+      ],
+      "stage_count": 2,
+      "stages": [
+        {
+          "stage_id": 6,
+          "tasks": 2,
+          "completed_tasks": 2,
+          "failed_tasks": 0,
+          "name": "reduceByKey at /workspace/src/analysis.py:165"
+        },
+        {
+          "stage_id": 7,
+          "tasks": 4,
+          "completed_tasks": 4,
+          "failed_tasks": 0,
+          "name": "takeOrdered at /workspace/src/analysis.py:171"
+        }
+      ]
+    },
+    {
+      "label": "quality_valid_dataframe",
+      "seconds": 26.677451737999945,
+      "job_ids": [
+        5,
+        6
+      ],
+      "stage_ids": [
+        8,
+        9,
+        10
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 8,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 9,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 10,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        }
+      ]
+    },
+    {
+      "label": "dataframe_revenue_by_city",
+      "seconds": 18.023433652999984,
+      "job_ids": [
+        7,
+        8
+      ],
+      "stage_ids": [
+        11,
+        12,
+        13
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 11,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 12,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 13,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        }
+      ]
+    },
+    {
+      "label": "sql_revenue_by_city",
+      "seconds": 5.91859015700004,
+      "job_ids": [
+        9,
+        10
+      ],
+      "stage_ids": [
+        14,
+        15,
+        16
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 14,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 15,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 16,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        }
+      ]
+    },
+    {
+      "label": "quality_restaurants_count",
+      "seconds": 2.1940868060000867,
+      "job_ids": [
+        11,
+        12
+      ],
+      "stage_ids": [
+        17,
+        18,
+        19
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 17,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 18,
+          "tasks": 1,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 19,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        }
+      ]
+    },
+    {
+      "label": "quality_restaurants_unique",
+      "seconds": 5.482650352000064,
+      "job_ids": [
+        13,
+        14,
+        15
+      ],
+      "stage_ids": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "stage_count": 6,
+      "stages": [
+        {
+          "stage_id": 20,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 21,
+          "tasks": 1,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 22,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 23,
+          "tasks": 1,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 24,
+          "tasks": 1,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 25,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        }
+      ]
+    },
+    {
+      "label": "quality_restaurants_null",
+      "seconds": 2.456101891000003,
+      "job_ids": [
+        16,
+        17
+      ],
+      "stage_ids": [
+        26,
+        27,
+        28
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 26,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 27,
+          "tasks": 1,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 28,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        }
+      ]
+    },
+    {
+      "label": "quality_missing_reference",
+      "seconds": 7.641122528999972,
+      "job_ids": [
+        18,
+        19,
+        20
+      ],
+      "stage_ids": [
+        29,
+        30,
+        31,
+        32
+      ],
+      "stage_count": 4,
+      "stages": [
+        {
+          "stage_id": 29,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "$anonfun$withThreadLocalCaptured$1 at FutureTask.java:264"
+        },
+        {
+          "stage_id": 30,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 31,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 32,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        }
+      ]
+    },
+    {
+      "label": "quality_city_mismatches",
+      "seconds": 7.2113855400000375,
+      "job_ids": [
+        21,
+        22,
+        23
+      ],
+      "stage_ids": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "stage_count": 4,
+      "stages": [
+        {
+          "stage_id": 33,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "$anonfun$withThreadLocalCaptured$1 at FutureTask.java:264"
+        },
+        {
+          "stage_id": 34,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 35,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 36,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        }
+      ]
+    },
+    {
+      "label": "dataframe_revenue_category_city",
+      "seconds": 8.548495211000045,
+      "job_ids": [
+        24,
+        25,
+        26
+      ],
+      "stage_ids": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "stage_count": 4,
+      "stages": [
+        {
+          "stage_id": 37,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 38,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 39,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 40,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        }
+      ]
+    },
+    {
+      "label": "quality_conflicting_duplicates",
+      "seconds": 10.113834405000034,
+      "job_ids": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "stage_ids": [
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "stage_count": 10,
+      "stages": [
+        {
+          "stage_id": 41,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 42,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 43,
+          "tasks": 2,
+          "completed_tasks": 2,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 44,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 45,
+          "tasks": 2,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 46,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 47,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 48,
+          "tasks": 2,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 49,
+          "tasks": 1,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 50,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        }
+      ]
+    },
+    {
+      "label": "quality_clean_count",
+      "seconds": 10.046310704999996,
+      "job_ids": [
+        31,
+        32,
+        33
+      ],
+      "stage_ids": [
+        51,
+        52,
+        53,
+        54,
+        55,
+        56
+      ],
+      "stage_count": 6,
+      "stages": [
+        {
+          "stage_id": 51,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 52,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 53,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 54,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 55,
+          "tasks": 1,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 56,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        }
+      ]
+    },
+    {
+      "label": "write_silver_partitioned",
+      "seconds": 31.75207173499996,
+      "job_ids": [
+        34,
+        35,
+        36
+      ],
+      "stage_ids": [
+        57,
+        58,
+        59,
+        60
+      ],
+      "stage_count": 4,
+      "stages": [
+        {
+          "stage_id": 57,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "$anonfun$withThreadLocalCaptured$1 at FutureTask.java:264"
+        },
+        {
+          "stage_id": 58,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "parquet at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 59,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "parquet at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 60,
+          "tasks": 2,
+          "completed_tasks": 2,
+          "failed_tasks": 0,
+          "name": "parquet at NativeMethodAccessorImpl.java:0"
+        }
+      ]
+    },
+    {
+      "label": "verify_silver_readback",
+      "seconds": 4.341860779000058,
+      "job_ids": [
+        38,
+        39
+      ],
+      "stage_ids": [
+        62,
+        63,
+        64
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 62,
+          "tasks": 4,
+          "completed_tasks": 4,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 63,
+          "tasks": 4,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 64,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        }
+      ]
+    },
+    {
+      "label": "clean_revenue_by_city",
+      "seconds": 8.101652466000019,
+      "job_ids": [
+        40,
+        41
+      ],
+      "stage_ids": [
+        65,
+        66,
+        67
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 65,
+          "tasks": 4,
+          "completed_tasks": 4,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 66,
+          "tasks": 4,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 67,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        }
+      ]
+    },
+    {
+      "label": "benchmark_warmup_RDD",
+      "seconds": 5.24252771700003,
+      "job_ids": [
+        42
+      ],
+      "stage_ids": [
+        68,
+        69
+      ],
+      "stage_count": 2,
+      "stages": [
+        {
+          "stage_id": 68,
+          "tasks": 2,
+          "completed_tasks": 2,
+          "failed_tasks": 0,
+          "name": "reduceByKey at /workspace/src/analysis.py:257"
+        },
+        {
+          "stage_id": 69,
+          "tasks": 4,
+          "completed_tasks": 4,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:257"
+        }
+      ]
+    },
+    {
+      "label": "benchmark_warmup_DataFrame",
+      "seconds": 11.75900788399997,
+      "job_ids": [
+        43,
+        44
+      ],
+      "stage_ids": [
+        70,
+        71,
+        72
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 70,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:258"
+        },
+        {
+          "stage_id": 71,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:258"
+        },
+        {
+          "stage_id": 72,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:258"
+        }
+      ]
+    },
+    {
+      "label": "benchmark_warmup_SQL",
+      "seconds": 3.3094424290000006,
+      "job_ids": [
+        45,
+        46
+      ],
+      "stage_ids": [
+        73,
+        74,
+        75
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 73,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:259"
+        },
+        {
+          "stage_id": 74,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:259"
+        },
+        {
+          "stage_id": 75,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:259"
+        }
+      ]
+    },
+    {
+      "label": "benchmark_RDD_1",
+      "seconds": 3.7741330060000564,
+      "job_ids": [
+        47
+      ],
+      "stage_ids": [
+        76,
+        77
+      ],
+      "stage_count": 2,
+      "stages": [
+        {
+          "stage_id": 76,
+          "tasks": 2,
+          "completed_tasks": 2,
+          "failed_tasks": 0,
+          "name": "reduceByKey at /workspace/src/analysis.py:257"
+        },
+        {
+          "stage_id": 77,
+          "tasks": 4,
+          "completed_tasks": 4,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:257"
+        }
+      ]
+    },
+    {
+      "label": "benchmark_DataFrame_1",
+      "seconds": 3.1419297560000814,
+      "job_ids": [
+        48,
+        49
+      ],
+      "stage_ids": [
+        78,
+        79,
+        80
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 78,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:258"
+        },
+        {
+          "stage_id": 79,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:258"
+        },
+        {
+          "stage_id": 80,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:258"
+        }
+      ]
+    },
+    {
+      "label": "benchmark_SQL_1",
+      "seconds": 2.683828812999991,
+      "job_ids": [
+        50,
+        51
+      ],
+      "stage_ids": [
+        81,
+        82,
+        83
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 81,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:259"
+        },
+        {
+          "stage_id": 82,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:259"
+        },
+        {
+          "stage_id": 83,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:259"
+        }
+      ]
+    },
+    {
+      "label": "benchmark_DataFrame_2",
+      "seconds": 2.4811637289999453,
+      "job_ids": [
+        52,
+        53
+      ],
+      "stage_ids": [
+        84,
+        85,
+        86
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 84,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:258"
+        },
+        {
+          "stage_id": 85,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:258"
+        },
+        {
+          "stage_id": 86,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:258"
+        }
+      ]
+    },
+    {
+      "label": "benchmark_SQL_2",
+      "seconds": 3.4888548489999494,
+      "job_ids": [
+        54,
+        55
+      ],
+      "stage_ids": [
+        87,
+        88,
+        89
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 87,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:259"
+        },
+        {
+          "stage_id": 88,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:259"
+        },
+        {
+          "stage_id": 89,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:259"
+        }
+      ]
+    },
+    {
+      "label": "benchmark_RDD_2",
+      "seconds": 4.6912308969999685,
+      "job_ids": [
+        56
+      ],
+      "stage_ids": [
+        90,
+        91
+      ],
+      "stage_count": 2,
+      "stages": [
+        {
+          "stage_id": 90,
+          "tasks": 2,
+          "completed_tasks": 2,
+          "failed_tasks": 0,
+          "name": "reduceByKey at /workspace/src/analysis.py:257"
+        },
+        {
+          "stage_id": 91,
+          "tasks": 4,
+          "completed_tasks": 4,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:257"
+        }
+      ]
+    },
+    {
+      "label": "benchmark_SQL_3",
+      "seconds": 1.4757858089999445,
+      "job_ids": [
+        57,
+        58
+      ],
+      "stage_ids": [
+        92,
+        93,
+        94
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 92,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:259"
+        },
+        {
+          "stage_id": 93,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:259"
+        },
+        {
+          "stage_id": 94,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:259"
+        }
+      ]
+    },
+    {
+      "label": "benchmark_RDD_3",
+      "seconds": 8.377382764999993,
+      "job_ids": [
+        59
+      ],
+      "stage_ids": [
+        95,
+        96
+      ],
+      "stage_count": 2,
+      "stages": [
+        {
+          "stage_id": 95,
+          "tasks": 2,
+          "completed_tasks": 2,
+          "failed_tasks": 0,
+          "name": "reduceByKey at /workspace/src/analysis.py:257"
+        },
+        {
+          "stage_id": 96,
+          "tasks": 4,
+          "completed_tasks": 4,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:257"
+        }
+      ]
+    },
+    {
+      "label": "benchmark_DataFrame_3",
+      "seconds": 3.0854757189999873,
+      "job_ids": [
+        60,
+        61
+      ],
+      "stage_ids": [
+        97,
+        98,
+        99
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 97,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:258"
+        },
+        {
+          "stage_id": 98,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:258"
+        },
+        {
+          "stage_id": 99,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:258"
+        }
+      ]
+    },
+    {
+      "label": "band_cache_materialization",
+      "seconds": 8.626701281999999,
+      "job_ids": [
+        62,
+        63,
+        64
+      ],
+      "stage_ids": [
+        100,
+        101,
+        102,
+        103
+      ],
+      "stage_count": 4,
+      "stages": [
+        {
+          "stage_id": 100,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 101,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 102,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        },
+        {
+          "stage_id": 103,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "count at NativeMethodAccessorImpl.java:0"
+        }
+      ]
+    },
+    {
+      "label": "band_warmup_python_udf",
+      "seconds": 15.274050351000028,
+      "job_ids": [
+        65,
+        66
+      ],
+      "stage_ids": [
+        104,
+        105,
+        106
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 104,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 105,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 106,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        }
+      ]
+    },
+    {
+      "label": "band_warmup_native_when",
+      "seconds": 2.687822935999975,
+      "job_ids": [
+        67,
+        68
+      ],
+      "stage_ids": [
+        107,
+        108,
+        109
+      ],
+      "stage_count": 3,
+      "stages": [
+        {
+          "stage_id": 107,
+          "tasks": 3,
+          "completed_tasks": 3,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 108,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 109,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        }
+      ]
+    },
+    {
+      "label": "band_python_udf_1",
+      "seconds": 0.6022287260000212,
+      "job_ids": [
+        69
+      ],
+      "stage_ids": [
+        110,
+        111
+      ],
+      "stage_count": 2,
+      "stages": [
+        {
+          "stage_id": 110,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 111,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        }
+      ]
+    },
+    {
+      "label": "band_native_when_1",
+      "seconds": 0.4225768410000228,
+      "job_ids": [
+        70
+      ],
+      "stage_ids": [
+        112,
+        113
+      ],
+      "stage_count": 2,
+      "stages": [
+        {
+          "stage_id": 112,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 113,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        }
+      ]
+    },
+    {
+      "label": "band_native_when_2",
+      "seconds": 0.5019646969999485,
+      "job_ids": [
+        71
+      ],
+      "stage_ids": [
+        114,
+        115
+      ],
+      "stage_count": 2,
+      "stages": [
+        {
+          "stage_id": 114,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 115,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        }
+      ]
+    },
+    {
+      "label": "band_python_udf_2",
+      "seconds": 0.35853569400001106,
+      "job_ids": [
+        72
+      ],
+      "stage_ids": [
+        116,
+        117
+      ],
+      "stage_count": 2,
+      "stages": [
+        {
+          "stage_id": 116,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 117,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        }
+      ]
+    },
+    {
+      "label": "band_python_udf_3",
+      "seconds": 0.6476033379999535,
+      "job_ids": [
+        73
+      ],
+      "stage_ids": [
+        118,
+        119
+      ],
+      "stage_count": 2,
+      "stages": [
+        {
+          "stage_id": 118,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 119,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        }
+      ]
+    },
+    {
+      "label": "band_native_when_3",
+      "seconds": 0.6085197140000673,
+      "job_ids": [
+        74
+      ],
+      "stage_ids": [
+        120,
+        121
+      ],
+      "stage_count": 2,
+      "stages": [
+        {
+          "stage_id": 120,
+          "tasks": 3,
+          "completed_tasks": 0,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        },
+        {
+          "stage_id": 121,
+          "tasks": 1,
+          "completed_tasks": 1,
+          "failed_tasks": 0,
+          "name": "collect at /workspace/src/analysis.py:103"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Jeu synthétique de démonstration : ce benchmark n'établit pas des performances de production.",
+    "Les KPI pédagogiques comptent les événements DELIVERED bruts, doublons compris. Silver déduplique par (order_id,status).",
+    "Le champ tenant_id est absent du schéma du jalon 1 ; ces analyses ne démontrent aucune isolation multi-tenant.",
+    "Un event log et des identifiants de stages ne remplacent pas une capture d'écran de Spark UI."
+  ]
+}

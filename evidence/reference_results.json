@@ -1,0 +1,509 @@
+{
+  "verification_method": "Python standard indépendant, sommes exactes en centimes; aucune mesure Spark.",
+  "raw": {
+    "event_count": 50000,
+    "delivered_count": 14897,
+    "total_revenue_cents": 339053484,
+    "total_revenue_mad": "3390534.84",
+    "cities": [
+      {
+        "city": "Casablanca",
+        "revenue_cents": 65176089,
+        "revenue_mad": "651760.89",
+        "delivered_count": 2874,
+        "average_basket_mad": "226.78"
+      },
+      {
+        "city": "Fès",
+        "revenue_cents": 70442626,
+        "revenue_mad": "704426.26",
+        "delivered_count": 3068,
+        "average_basket_mad": "229.60"
+      },
+      {
+        "city": "Marrakech",
+        "revenue_cents": 66888809,
+        "revenue_mad": "668888.09",
+        "delivered_count": 2967,
+        "average_basket_mad": "225.44"
+      },
+      {
+        "city": "Rabat",
+        "revenue_cents": 68708085,
+        "revenue_mad": "687080.85",
+        "delivered_count": 3039,
+        "average_basket_mad": "226.09"
+      },
+      {
+        "city": "Tanger",
+        "revenue_cents": 67837875,
+        "revenue_mad": "678378.75",
+        "delivered_count": 2949,
+        "average_basket_mad": "230.04"
+      }
+    ],
+    "categories_by_city": [
+      {
+        "city": "Casablanca",
+        "category": "burger",
+        "revenue_cents": 12795792,
+        "revenue_mad": "127957.92",
+        "delivered_count": 588
+      },
+      {
+        "city": "Casablanca",
+        "category": "marocain",
+        "revenue_cents": 13508831,
+        "revenue_mad": "135088.31",
+        "delivered_count": 586
+      },
+      {
+        "city": "Casablanca",
+        "category": "pizza",
+        "revenue_cents": 12491281,
+        "revenue_mad": "124912.81",
+        "delivered_count": 567
+      },
+      {
+        "city": "Casablanca",
+        "category": "sushi",
+        "revenue_cents": 13358489,
+        "revenue_mad": "133584.89",
+        "delivered_count": 565
+      },
+      {
+        "city": "Casablanca",
+        "category": "tacos",
+        "revenue_cents": 13021696,
+        "revenue_mad": "130216.96",
+        "delivered_count": 568
+      },
+      {
+        "city": "Fès",
+        "category": "burger",
+        "revenue_cents": 14790230,
+        "revenue_mad": "147902.30",
+        "delivered_count": 635
+      },
+      {
+        "city": "Fès",
+        "category": "marocain",
+        "revenue_cents": 14662141,
+        "revenue_mad": "146621.41",
+        "delivered_count": 641
+      },
+      {
+        "city": "Fès",
+        "category": "pizza",
+        "revenue_cents": 14063418,
+        "revenue_mad": "140634.18",
+        "delivered_count": 610
+      },
+      {
+        "city": "Fès",
+        "category": "sushi",
+        "revenue_cents": 13185435,
+        "revenue_mad": "131854.35",
+        "delivered_count": 584
+      },
+      {
+        "city": "Fès",
+        "category": "tacos",
+        "revenue_cents": 13741402,
+        "revenue_mad": "137414.02",
+        "delivered_count": 598
+      },
+      {
+        "city": "Marrakech",
+        "category": "burger",
+        "revenue_cents": 14437195,
+        "revenue_mad": "144371.95",
+        "delivered_count": 645
+      },
+      {
+        "city": "Marrakech",
+        "category": "marocain",
+        "revenue_cents": 12354252,
+        "revenue_mad": "123542.52",
+        "delivered_count": 552
+      },
+      {
+        "city": "Marrakech",
+        "category": "pizza",
+        "revenue_cents": 13678201,
+        "revenue_mad": "136782.01",
+        "delivered_count": 610
+      },
+      {
+        "city": "Marrakech",
+        "category": "sushi",
+        "revenue_cents": 12391027,
+        "revenue_mad": "123910.27",
+        "delivered_count": 551
+      },
+      {
+        "city": "Marrakech",
+        "category": "tacos",
+        "revenue_cents": 14028134,
+        "revenue_mad": "140281.34",
+        "delivered_count": 609
+      },
+      {
+        "city": "Rabat",
+        "category": "burger",
+        "revenue_cents": 13498479,
+        "revenue_mad": "134984.79",
+        "delivered_count": 601
+      },
+      {
+        "city": "Rabat",
+        "category": "marocain",
+        "revenue_cents": 13984452,
+        "revenue_mad": "139844.52",
+        "delivered_count": 622
+      },
+      {
+        "city": "Rabat",
+        "category": "pizza",
+        "revenue_cents": 13503192,
+        "revenue_mad": "135031.92",
+        "delivered_count": 606
+      },
+      {
+        "city": "Rabat",
+        "category": "sushi",
+        "revenue_cents": 14027798,
+        "revenue_mad": "140277.98",
+        "delivered_count": 612
+      },
+      {
+        "city": "Rabat",
+        "category": "tacos",
+        "revenue_cents": 13694164,
+        "revenue_mad": "136941.64",
+        "delivered_count": 598
+      },
+      {
+        "city": "Tanger",
+        "category": "burger",
+        "revenue_cents": 13987791,
+        "revenue_mad": "139877.91",
+        "delivered_count": 597
+      },
+      {
+        "city": "Tanger",
+        "category": "marocain",
+        "revenue_cents": 13671571,
+        "revenue_mad": "136715.71",
+        "delivered_count": 577
+      },
+      {
+        "city": "Tanger",
+        "category": "pizza",
+        "revenue_cents": 13225261,
+        "revenue_mad": "132252.61",
+        "delivered_count": 590
+      },
+      {
+        "city": "Tanger",
+        "category": "sushi",
+        "revenue_cents": 13316928,
+        "revenue_mad": "133169.28",
+        "delivered_count": 579
+      },
+      {
+        "city": "Tanger",
+        "category": "tacos",
+        "revenue_cents": 13636324,
+        "revenue_mad": "136363.24",
+        "delivered_count": 606
+      }
+    ],
+    "top5_restaurants": [
+      {
+        "restaurant_id": "R-069",
+        "name": "Maison Marocain 069",
+        "city": "Fès",
+        "delivered_count": 100
+      },
+      {
+        "restaurant_id": "R-003",
+        "name": "Maison Pizza 003",
+        "city": "Marrakech",
+        "delivered_count": 99
+      },
+      {
+        "restaurant_id": "R-169",
+        "name": "Maison Marocain 169",
+        "city": "Fès",
+        "delivered_count": 96
+      },
+      {
+        "restaurant_id": "R-014",
+        "name": "Maison Sushi 014",
+        "city": "Fès",
+        "delivered_count": 95
+      },
+      {
+        "restaurant_id": "R-173",
+        "name": "Maison Burger 173",
+        "city": "Marrakech",
+        "delivered_count": 94
+      }
+    ]
+  },
+  "deduplicated": {
+    "event_count": 49000,
+    "delivered_count": 14626,
+    "total_revenue_cents": 332904290,
+    "total_revenue_mad": "3329042.90",
+    "cities": [
+      {
+        "city": "Casablanca",
+        "revenue_cents": 63860586,
+        "revenue_mad": "638605.86",
+        "delivered_count": 2813,
+        "average_basket_mad": "227.02"
+      },
+      {
+        "city": "Fès",
+        "revenue_cents": 69217023,
+        "revenue_mad": "692170.23",
+        "delivered_count": 3015,
+        "average_basket_mad": "229.58"
+      },
+      {
+        "city": "Marrakech",
+        "revenue_cents": 65835245,
+        "revenue_mad": "658352.45",
+        "delivered_count": 2922,
+        "average_basket_mad": "225.31"
+      },
+      {
+        "city": "Rabat",
+        "revenue_cents": 67498767,
+        "revenue_mad": "674987.67",
+        "delivered_count": 2989,
+        "average_basket_mad": "225.82"
+      },
+      {
+        "city": "Tanger",
+        "revenue_cents": 66492669,
+        "revenue_mad": "664926.69",
+        "delivered_count": 2887,
+        "average_basket_mad": "230.32"
+      }
+    ],
+    "categories_by_city": [
+      {
+        "city": "Casablanca",
+        "category": "burger",
+        "revenue_cents": 12580402,
+        "revenue_mad": "125804.02",
+        "delivered_count": 577
+      },
+      {
+        "city": "Casablanca",
+        "category": "marocain",
+        "revenue_cents": 13227134,
+        "revenue_mad": "132271.34",
+        "delivered_count": 575
+      },
+      {
+        "city": "Casablanca",
+        "category": "pizza",
+        "revenue_cents": 12189584,
+        "revenue_mad": "121895.84",
+        "delivered_count": 552
+      },
+      {
+        "city": "Casablanca",
+        "category": "sushi",
+        "revenue_cents": 13129921,
+        "revenue_mad": "131299.21",
+        "delivered_count": 553
+      },
+      {
+        "city": "Casablanca",
+        "category": "tacos",
+        "revenue_cents": 12733545,
+        "revenue_mad": "127335.45",
+        "delivered_count": 556
+      },
+      {
+        "city": "Fès",
+        "category": "burger",
+        "revenue_cents": 14407139,
+        "revenue_mad": "144071.39",
+        "delivered_count": 618
+      },
+      {
+        "city": "Fès",
+        "category": "marocain",
+        "revenue_cents": 14411666,
+        "revenue_mad": "144116.66",
+        "delivered_count": 628
+      },
+      {
+        "city": "Fès",
+        "category": "pizza",
+        "revenue_cents": 13887838,
+        "revenue_mad": "138878.38",
+        "delivered_count": 603
+      },
+      {
+        "city": "Fès",
+        "category": "sushi",
+        "revenue_cents": 13002085,
+        "revenue_mad": "130020.85",
+        "delivered_count": 578
+      },
+      {
+        "city": "Fès",
+        "category": "tacos",
+        "revenue_cents": 13508295,
+        "revenue_mad": "135082.95",
+        "delivered_count": 588
+      },
+      {
+        "city": "Marrakech",
+        "category": "burger",
+        "revenue_cents": 14135666,
+        "revenue_mad": "141356.66",
+        "delivered_count": 632
+      },
+      {
+        "city": "Marrakech",
+        "category": "marocain",
+        "revenue_cents": 12154064,
+        "revenue_mad": "121540.64",
+        "delivered_count": 542
+      },
+      {
+        "city": "Marrakech",
+        "category": "pizza",
+        "revenue_cents": 13501642,
+        "revenue_mad": "135016.42",
+        "delivered_count": 603
+      },
+      {
+        "city": "Marrakech",
+        "category": "sushi",
+        "revenue_cents": 12176719,
+        "revenue_mad": "121767.19",
+        "delivered_count": 543
+      },
+      {
+        "city": "Marrakech",
+        "category": "tacos",
+        "revenue_cents": 13867154,
+        "revenue_mad": "138671.54",
+        "delivered_count": 602
+      },
+      {
+        "city": "Rabat",
+        "category": "burger",
+        "revenue_cents": 13285328,
+        "revenue_mad": "132853.28",
+        "delivered_count": 591
+      },
+      {
+        "city": "Rabat",
+        "category": "marocain",
+        "revenue_cents": 13913338,
+        "revenue_mad": "139133.38",
+        "delivered_count": 620
+      },
+      {
+        "city": "Rabat",
+        "category": "pizza",
+        "revenue_cents": 13168969,
+        "revenue_mad": "131689.69",
+        "delivered_count": 593
+      },
+      {
+        "city": "Rabat",
+        "category": "sushi",
+        "revenue_cents": 13798102,
+        "revenue_mad": "137981.02",
+        "delivered_count": 602
+      },
+      {
+        "city": "Rabat",
+        "category": "tacos",
+        "revenue_cents": 13333030,
+        "revenue_mad": "133330.30",
+        "delivered_count": 583
+      },
+      {
+        "city": "Tanger",
+        "category": "burger",
+        "revenue_cents": 13710532,
+        "revenue_mad": "137105.32",
+        "delivered_count": 582
+      },
+      {
+        "city": "Tanger",
+        "category": "marocain",
+        "revenue_cents": 13350142,
+        "revenue_mad": "133501.42",
+        "delivered_count": 565
+      },
+      {
+        "city": "Tanger",
+        "category": "pizza",
+        "revenue_cents": 12983340,
+        "revenue_mad": "129833.40",
+        "delivered_count": 580
+      },
+      {
+        "city": "Tanger",
+        "category": "sushi",
+        "revenue_cents": 12989047,
+        "revenue_mad": "129890.47",
+        "delivered_count": 563
+      },
+      {
+        "city": "Tanger",
+        "category": "tacos",
+        "revenue_cents": 13459608,
+        "revenue_mad": "134596.08",
+        "delivered_count": 597
+      }
+    ],
+    "top5_restaurants": [
+      {
+        "restaurant_id": "R-069",
+        "name": "Maison Marocain 069",
+        "city": "Fès",
+        "delivered_count": 98
+      },
+      {
+        "restaurant_id": "R-003",
+        "name": "Maison Pizza 003",
+        "city": "Marrakech",
+        "delivered_count": 97
+      },
+      {
+        "restaurant_id": "R-014",
+        "name": "Maison Sushi 014",
+        "city": "Fès",
+        "delivered_count": 94
+      },
+      {
+        "restaurant_id": "R-169",
+        "name": "Maison Marocain 169",
+        "city": "Fès",
+        "delivered_count": 94
+      },
+      {
+        "restaurant_id": "R-173",
+        "name": "Maison Burger 173",
+        "city": "Marrakech",
+        "delivered_count": 93
+      }
+    ]
+  },
+  "duplicate_count": 1000,
+  "duplicate_revenue_overstatement_mad": "61491.94"
+}

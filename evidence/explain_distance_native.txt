@@ -1,0 +1,37 @@
+== Parsed Logical Plan ==
+'Aggregate ['distance_band], ['distance_band, count(1) AS count#892L]
++- Project [distance_km#7, CASE WHEN ((isnull(distance_km#7) OR isnan(distance_km#7)) OR (distance_km#7 < cast(0 as double))) THEN cast(null as string) WHEN (distance_km#7 < cast(2 as double)) THEN court WHEN (distance_km#7 <= cast(5 as double)) THEN moyen ELSE long END AS distance_band#886]
+   +- Project [distance_km#7]
+      +- Project [order_id#0, restaurant_id#1, customer_id#2, city#3, status#4, amount_mad#5, items_count#6, distance_km#7, courier_id#8, event_time#9]
+         +- Filter (((((((((((((((((((((true AND isnotnull(order_id#0)) AND (length(trim(order_id#0, None)) > 0)) AND isnotnull(restaurant_id#1)) AND (length(trim(restaurant_id#1, None)) > 0)) AND isnotnull(customer_id#2)) AND (length(trim(customer_id#2, None)) > 0)) AND isnotnull(city#3)) AND (length(trim(city#3, None)) > 0)) AND isnotnull(courier_id#8)) AND (length(trim(courier_id#8, None)) > 0)) AND isnull(_corrupt_record#10)) AND status#4 IN (CANCELLED,CREATED,DELIVERED,PICKED_UP)) AND isnotnull(amount_mad#5)) AND (amount_mad#5 >= cast(cast(0 as decimal(1,0)) as decimal(12,2)))) AND isnotnull(items_count#6)) AND (items_count#6 > 0)) AND isnotnull(distance_km#7)) AND NOT isnan(distance_km#7)) AND (distance_km#7 >= cast(0 as double))) AND (distance_km#7 < Infinity)) AND isnotnull(event_time#9))
+            +- Relation [order_id#0,restaurant_id#1,customer_id#2,city#3,status#4,amount_mad#5,items_count#6,distance_km#7,courier_id#8,event_time#9,_corrupt_record#10] json
+
+== Analyzed Logical Plan ==
+distance_band: string, count: bigint
+Aggregate [distance_band#886], [distance_band#886, count(1) AS count#892L]
++- Project [distance_km#7, CASE WHEN ((isnull(distance_km#7) OR isnan(distance_km#7)) OR (distance_km#7 < cast(0 as double))) THEN cast(null as string) WHEN (distance_km#7 < cast(2 as double)) THEN court WHEN (distance_km#7 <= cast(5 as double)) THEN moyen ELSE long END AS distance_band#886]
+   +- Project [distance_km#7]
+      +- Project [order_id#0, restaurant_id#1, customer_id#2, city#3, status#4, amount_mad#5, items_count#6, distance_km#7, courier_id#8, event_time#9]
+         +- Filter (((((((((((((((((((((true AND isnotnull(order_id#0)) AND (length(trim(order_id#0, None)) > 0)) AND isnotnull(restaurant_id#1)) AND (length(trim(restaurant_id#1, None)) > 0)) AND isnotnull(customer_id#2)) AND (length(trim(customer_id#2, None)) > 0)) AND isnotnull(city#3)) AND (length(trim(city#3, None)) > 0)) AND isnotnull(courier_id#8)) AND (length(trim(courier_id#8, None)) > 0)) AND isnull(_corrupt_record#10)) AND status#4 IN (CANCELLED,CREATED,DELIVERED,PICKED_UP)) AND isnotnull(amount_mad#5)) AND (amount_mad#5 >= cast(cast(0 as decimal(1,0)) as decimal(12,2)))) AND isnotnull(items_count#6)) AND (items_count#6 > 0)) AND isnotnull(distance_km#7)) AND NOT isnan(distance_km#7)) AND (distance_km#7 >= cast(0 as double))) AND (distance_km#7 < Infinity)) AND isnotnull(event_time#9))
+            +- Relation [order_id#0,restaurant_id#1,customer_id#2,city#3,status#4,amount_mad#5,items_count#6,distance_km#7,courier_id#8,event_time#9,_corrupt_record#10] json
+
+== Optimized Logical Plan ==
+Aggregate [distance_band#886], [distance_band#886, count(1) AS count#892L]
++- Project [CASE WHEN ((isnull(distance_km#7) OR isnan(distance_km#7)) OR (distance_km#7 < 0.0)) THEN null WHEN (distance_km#7 < 2.0) THEN court WHEN (distance_km#7 <= 5.0) THEN moyen ELSE long END AS distance_band#886]
+   +- InMemoryRelation [distance_km#7], StorageLevel(disk, memory, deserialized, 1 replicas)
+         +- *(1) Project [distance_km#7]
+            +- *(1) Filter ((((((((((((((((((((isnotnull(order_id#0) AND (length(trim(order_id#0, None)) > 0)) AND isnotnull(restaurant_id#1)) AND (length(trim(restaurant_id#1, None)) > 0)) AND isnotnull(customer_id#2)) AND (length(trim(customer_id#2, None)) > 0)) AND isnotnull(city#3)) AND (length(trim(city#3, None)) > 0)) AND isnotnull(courier_id#8)) AND (length(trim(courier_id#8, None)) > 0)) AND isnull(_corrupt_record#10)) AND status#4 IN (CANCELLED,CREATED,DELIVERED,PICKED_UP)) AND isnotnull(amount_mad#5)) AND (amount_mad#5 >= 0.00)) AND isnotnull(items_count#6)) AND (items_count#6 > 0)) AND isnotnull(distance_km#7)) AND NOT isnan(distance_km#7)) AND (distance_km#7 >= 0.0)) AND (distance_km#7 < Infinity)) AND isnotnull(event_time#9))
+               +- FileScan json [order_id#0,restaurant_id#1,customer_id#2,city#3,status#4,amount_mad#5,items_count#6,distance_km#7,courier_id#8,event_time#9,_corrupt_record#10] Batched: false, DataFilters: [isnotnull(order_id#0), (length(trim(order_id#0, None)) > 0), isnotnull(restaurant_id#1), (length..., Format: JSON, Location: InMemoryFileIndex(1 paths)[s3a://lake/bronze/history/orders_history.jsonl], PartitionFilters: [], PushedFilters: [IsNotNull(order_id), IsNotNull(restaurant_id), IsNotNull(customer_id), IsNotNull(city), IsNotNul..., ReadSchema: struct<order_id:string,restaurant_id:string,customer_id:string,city:string,status:string,amount_m...
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- HashAggregate(keys=[distance_band#886], functions=[count(1)], output=[distance_band#886, count#892L])
+   +- Exchange hashpartitioning(distance_band#886, 4), ENSURE_REQUIREMENTS, [plan_id=1808]
+      +- HashAggregate(keys=[distance_band#886], functions=[partial_count(1)], output=[distance_band#886, count#929L])
+         +- Project [CASE WHEN ((isnull(distance_km#7) OR isnan(distance_km#7)) OR (distance_km#7 < 0.0)) THEN null WHEN (distance_km#7 < 2.0) THEN court WHEN (distance_km#7 <= 5.0) THEN moyen ELSE long END AS distance_band#886]
+            +- InMemoryTableScan [distance_km#7]
+                  +- InMemoryRelation [distance_km#7], StorageLevel(disk, memory, deserialized, 1 replicas)
+                        +- *(1) Project [distance_km#7]
+                           +- *(1) Filter ((((((((((((((((((((isnotnull(order_id#0) AND (length(trim(order_id#0, None)) > 0)) AND isnotnull(restaurant_id#1)) AND (length(trim(restaurant_id#1, None)) > 0)) AND isnotnull(customer_id#2)) AND (length(trim(customer_id#2, None)) > 0)) AND isnotnull(city#3)) AND (length(trim(city#3, None)) > 0)) AND isnotnull(courier_id#8)) AND (length(trim(courier_id#8, None)) > 0)) AND isnull(_corrupt_record#10)) AND status#4 IN (CANCELLED,CREATED,DELIVERED,PICKED_UP)) AND isnotnull(amount_mad#5)) AND (amount_mad#5 >= 0.00)) AND isnotnull(items_count#6)) AND (items_count#6 > 0)) AND isnotnull(distance_km#7)) AND NOT isnan(distance_km#7)) AND (distance_km#7 >= 0.0)) AND (distance_km#7 < Infinity)) AND isnotnull(event_time#9))
+                              +- FileScan json [order_id#0,restaurant_id#1,customer_id#2,city#3,status#4,amount_mad#5,items_count#6,distance_km#7,courier_id#8,event_time#9,_corrupt_record#10] Batched: false, DataFilters: [isnotnull(order_id#0), (length(trim(order_id#0, None)) > 0), isnotnull(restaurant_id#1), (length..., Format: JSON, Location: InMemoryFileIndex(1 paths)[s3a://lake/bronze/history/orders_history.jsonl], PartitionFilters: [], PushedFilters: [IsNotNull(order_id), IsNotNull(restaurant_id), IsNotNull(customer_id), IsNotNull(city), IsNotNul..., ReadSchema: struct<order_id:string,restaurant_id:string,customer_id:string,city:string,status:string,amount_m...
+

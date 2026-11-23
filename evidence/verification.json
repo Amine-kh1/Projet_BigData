@@ -1,0 +1,16 @@
+{
+  "status": "PASSED",
+  "checks_count": 98,
+  "errors": [],
+  "scope": "Réconciliation métier exacte des KPI bruts et Silver, top 5 brut et catégorie-ville brute; ne remplace pas les captures du cluster ou du DAG.",
+  "spark_environment": {
+    "spark_version": "3.5.3",
+    "python_version": "3.10.12",
+    "master": "spark://spark-master:7077",
+    "app_name": "Jalon1-Orders-Batch",
+    "application_id": "app-20261123001000-0001",
+    "default_parallelism": 4,
+    "spark_ui_url": "http://jupyter:4040",
+    "shuffle_partitions": "4"
+  }
+}

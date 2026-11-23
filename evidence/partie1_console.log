@@ -1,0 +1,61 @@
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/11/23 00:08:20 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+[Stage 0:>                                                          (0 + 0) / 4]
+
+[Stage 0:>                                                          (0 + 4) / 4]
+
+[Stage 0:==============>                                            (1 + 3) / 4]
+
+                                                                                
+{
+  "observed_at_utc": "2026-11-23T00:09:02.827084+00:00",
+  "spark_version": "3.5.3",
+  "master": "spark://spark-master:7077",
+  "app_name": "Partie1-VerificationCluster",
+  "application_id": "app-20261123000829-0000",
+  "default_parallelism": 4,
+  "python_task_sum": 499500,
+  "spark_ui": "http://jupyter:4040",
+  "active_workers": 2,
+  "workers": [
+    {
+      "id": "worker-20261123000645-spark-worker-2-36479",
+      "host": "spark-worker-2",
+      "port": 36479,
+      "webuiaddress": "http://spark-worker-2:8081",
+      "cores": 2,
+      "coresused": 2,
+      "coresfree": 0,
+      "memory": 2048,
+      "memoryused": 1024,
+      "memoryfree": 1024,
+      "resources": {},
+      "resourcesused": {},
+      "resourcesfree": {},
+      "state": "ALIVE",
+      "lastheartbeat": 1795392542889
+    },
+    {
+      "id": "worker-20261123000401-spark-worker-1-39141",
+      "host": "spark-worker-1",
+      "port": 39141,
+      "webuiaddress": "http://spark-worker-1:8081",
+      "cores": 2,
+      "coresused": 2,
+      "coresfree": 0,
+      "memory": 2048,
+      "memoryused": 1024,
+      "memoryfree": 1024,
+      "resources": {},
+      "resourcesused": {},
+      "resourcesfree": {},
+      "state": "ALIVE",
+      "lastheartbeat": 1795392529351
+    }
+  ],
+  "buckets": [
+    "lake"
+  ]
+}

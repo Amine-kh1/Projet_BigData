@@ -1,0 +1,11 @@
+.git
+.env
+__pycache__
+*.pyc
+.ipynb_checkpoints
+data
+evidence
+results
+*.zip
+*.pdf
+tmp

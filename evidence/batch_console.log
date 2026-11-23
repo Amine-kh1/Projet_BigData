@@ -1,0 +1,404 @@
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/11/23 00:09:47 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/11/23 00:10:14 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+
+[Stage 0:>                                                          (0 + 0) / 2]
+
+[Stage 0:>                                                          (0 + 2) / 2]
+
+                                                                                
+
+[Stage 1:>                                                          (0 + 2) / 2]
+
+[Stage 1:=============================>                             (1 + 1) / 2]
+
+                                                                                
+
+[Stage 2:>                                                          (0 + 2) / 2]
+
+[Stage 3:>                                                          (0 + 4) / 4]
+
+[Stage 3:==============>                                            (1 + 3) / 4]
+
+[Stage 3:============================================>              (3 + 1) / 4]
+
+                                                                                
+
+[Stage 4:>                                                          (0 + 2) / 2]
+
+[Stage 4:=============================>                             (1 + 1) / 2]
+
+[Stage 5:>                                                          (0 + 4) / 4]
+
+[Stage 5:============================================>              (3 + 1) / 4]
+
+                                                                                
+
+[Stage 6:>                                                          (0 + 2) / 2]
+
+[Stage 6:=============================>                             (1 + 1) / 2]
+
+[Stage 7:>                                                          (0 + 4) / 4]
+
+[Stage 7:===========================================================(4 + 0) / 4]
+
+                                                                                
+
+[Stage 8:>                                                          (0 + 3) / 3]
+
+[Stage 8:===================>                                       (1 + 2) / 3]
+
+[Stage 8:=======================================>                   (2 + 1) / 3]
+
+[Stage 10:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 11:>                                                         (0 + 3) / 3]
+
+[Stage 11:===================>                                      (1 + 2) / 3]
+
+[Stage 11:======================================>                   (2 + 1) / 3]
+
+[Stage 13:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 14:>                                                         (0 + 3) / 3]
+
+[Stage 14:======================================>                   (2 + 1) / 3]
+
+[Stage 16:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 17:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 20:>                                                         (0 + 1) / 1]
+
+[Stage 22:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 26:>                                                         (0 + 1) / 1]
+
+[Stage 28:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 30:>                                                         (0 + 3) / 3]
+
+[Stage 30:===================>                                      (1 + 2) / 3]
+
+[Stage 30:======================================>                   (2 + 1) / 3]
+
+                                                                                
+
+[Stage 33:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 34:>                                                         (0 + 3) / 3]
+
+[Stage 34:======================================>                   (2 + 1) / 3]
+
+                                                                                
+
+[Stage 38:>                                                         (0 + 3) / 3]
+
+[Stage 38:===================>                                      (1 + 2) / 3]
+
+[Stage 38:======================================>                   (2 + 1) / 3]
+
+                                                                                
+
+[Stage 41:>                                                         (0 + 3) / 3]
+
+[Stage 41:===================>                                      (1 + 2) / 3]
+
+[Stage 41:======================================>                   (2 + 1) / 3]
+
+[Stage 43:>                                                         (0 + 2) / 2]
+
+[Stage 43:=============================>                            (1 + 1) / 2]
+
+[Stage 46:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 51:>                                                         (0 + 3) / 3]
+
+[Stage 51:===================>                                      (1 + 2) / 3]
+
+[Stage 51:======================================>                   (2 + 1) / 3]
+
+[Stage 53:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 57:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 58:>                                                         (0 + 3) / 3]
+
+[Stage 58:======================================>                   (2 + 1) / 3]
+
+[Stage 60:>                                                         (0 + 2) / 2]
+
+[Stage 60:=============================>                            (1 + 1) / 2]
+
+                                                                                
+
+[Stage 61:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 62:>                                                         (0 + 4) / 4]
+
+[Stage 62:==============>                                           (1 + 3) / 4]
+
+[Stage 62:=============================>                            (2 + 2) / 4]
+
+[Stage 62:===========================================>              (3 + 1) / 4]
+
+                                                                                
+
+[Stage 65:>                                                         (0 + 4) / 4]
+
+[Stage 65:==============>                                           (1 + 3) / 4]
+
+[Stage 65:===========================================>              (3 + 1) / 4]
+
+[Stage 67:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 68:>                                                         (0 + 2) / 2]
+
+[Stage 68:=============================>                            (1 + 1) / 2]
+
+[Stage 69:>                                                         (0 + 4) / 4]
+
+[Stage 69:=============================>                            (2 + 2) / 4]
+
+                                                                                
+
+[Stage 70:>                                                         (0 + 3) / 3]
+
+[Stage 70:===================>                                      (1 + 2) / 3]
+
+[Stage 70:======================================>                   (2 + 1) / 3]
+
+                                                                                
+
+[Stage 73:>                                                         (0 + 3) / 3]
+
+[Stage 73:======================================>                   (2 + 1) / 3]
+
+                                                                                
+
+[Stage 76:>                                                         (0 + 2) / 2]
+
+[Stage 77:>                                                         (0 + 4) / 4]
+
+[Stage 77:==============>                                           (1 + 3) / 4]
+
+                                                                                
+
+[Stage 78:>                                                         (0 + 3) / 3]
+
+[Stage 78:======================================>                   (2 + 1) / 3]
+
+                                                                                
+
+[Stage 81:>                                                         (0 + 3) / 3]
+
+[Stage 81:===================>                                      (1 + 2) / 3]
+
+[Stage 81:======================================>                   (2 + 1) / 3]
+
+                                                                                
+
+[Stage 84:>                                                         (0 + 3) / 3]
+
+[Stage 84:===================>                                      (1 + 2) / 3]
+
+                                                                                
+
+[Stage 87:>                                                         (0 + 3) / 3]
+
+[Stage 87:===================>                                      (1 + 2) / 3]
+
+                                                                                
+
+[Stage 90:>                                                         (0 + 2) / 2]
+
+[Stage 91:>                                                         (0 + 4) / 4]
+
+[Stage 91:=============================>                            (2 + 2) / 4]
+
+                                                                                
+
+[Stage 92:>                                                         (0 + 3) / 3]
+
+                                                                                
+
+[Stage 95:>                                                         (0 + 2) / 2]
+
+[Stage 95:=============================>                            (1 + 1) / 2]
+
+[Stage 96:>                                                         (0 + 4) / 4]
+
+[Stage 96:=============================>                            (2 + 2) / 4]
+
+                                                                                
+
+[Stage 97:>                                                         (0 + 3) / 3]
+
+[Stage 97:======================================>                   (2 + 1) / 3]
+
+                                                                                
+
+[Stage 100:>                                                        (0 + 3) / 3]
+
+[Stage 100:======================================>                  (2 + 1) / 3]
+
+[Stage 101:>                                                        (0 + 3) / 3]
+
+[Stage 101:======================================>                  (2 + 1) / 3]
+
+                                                                                
+
+[Stage 104:>                                                        (0 + 3) / 3]
+
+[Stage 104:===================>                                     (1 + 2) / 3]
+
+[Stage 104:======================================>                  (2 + 1) / 3]
+
+                                                                                
+
+[Stage 107:>                                                        (0 + 3) / 3]
+
+                                                                                
+{
+  "quality": {
+    "input_lines": 50000,
+    "valid_rows_rdd": 50000,
+    "valid_rows_dataframe": 50000,
+    "rejected_rows": 0,
+    "restaurant_count": 200,
+    "missing_restaurant_events": 0,
+    "city_mismatch_events": 0,
+    "conflicting_duplicate_keys": 0,
+    "duplicates_removed": 1000,
+    "silver_rows": 49000
+  },
+  "raw_city_kpis": [
+    {
+      "city": "Casablanca",
+      "delivered_events": 2874,
+      "revenue_mad": "651760.89",
+      "average_basket_mad": "226.78"
+    },
+    {
+      "city": "Fès",
+      "delivered_events": 3068,
+      "revenue_mad": "704426.26",
+      "average_basket_mad": "229.60"
+    },
+    {
+      "city": "Marrakech",
+      "delivered_events": 2967,
+      "revenue_mad": "668888.09",
+      "average_basket_mad": "225.44"
+    },
+    {
+      "city": "Rabat",
+      "delivered_events": 3039,
+      "revenue_mad": "687080.85",
+      "average_basket_mad": "226.09"
+    },
+    {
+      "city": "Tanger",
+      "delivered_events": 2949,
+      "revenue_mad": "678378.75",
+      "average_basket_mad": "230.04"
+    }
+  ],
+  "raw_top5_restaurants": [
+    {
+      "restaurant_id": "R-069",
+      "delivered_events": 100
+    },
+    {
+      "restaurant_id": "R-003",
+      "delivered_events": 99
+    },
+    {
+      "restaurant_id": "R-169",
+      "delivered_events": 96
+    },
+    {
+      "restaurant_id": "R-014",
+      "delivered_events": 95
+    },
+    {
+      "restaurant_id": "R-173",
+      "delivered_events": 94
+    }
+  ],
+  "benchmark": {
+    "repetitions": 3,
+    "method": "Un tour de chauffe puis tours alternés ; agrégats collectés ; sources non persistées ; cache OS/JVM potentiellement chaud. Même CA brut DELIVERED, sérialisation comprise.",
+    "api": {
+      "RDD": {
+        "samples_seconds": [
+          3.7741330060000564,
+          4.6912308969999685,
+          8.377382764999993
+        ],
+        "median_seconds": 4.6912308969999685
+      },
+      "DataFrame": {
+        "samples_seconds": [
+          3.1419297560000814,
+          2.4811637289999453,
+          3.0854757189999873
+        ],
+        "median_seconds": 3.0854757189999873
+      },
+      "SQL": {
+        "samples_seconds": [
+          2.683828812999991,
+          3.4888548489999494,
+          1.4757858089999445
+        ],
+        "median_seconds": 2.683828812999991
+      }
+    },
+    "distance": {
+      "python_udf": {
+        "samples_seconds": [
+          0.6022287260000212,
+          0.35853569400001106,
+          0.6476033379999535
+        ],
+        "median_seconds": 0.6022287260000212
+      },
+      "native_when": {
+        "samples_seconds": [
+          0.4225768410000228,
+          0.5019646969999485,
+          0.6085197140000673
+        ],
+        "median_seconds": 0.5019646969999485
+      }
+    },
+    "distance_method": "Même colonne distance_km persistée et matérialisée ; groupBy(distance_band).count().collect() force le calcul de la bande ; un tour de chauffe puis alternance."
+  },
+  "reconciliation_rdd_dataframe_sql": true
+}

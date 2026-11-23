@@ -1,0 +1,30 @@
+{
+  "provenance": "Données synthétiques; générateur pédagogique de remplacement, non fourni avec le sujet.",
+  "seed": 42,
+  "base_event_time_utc": "2026-11-15T08:00:00Z",
+  "event_count": 50000,
+  "unique_order_status_count": 49000,
+  "order_count": 17187,
+  "duplicate_count": 1000,
+  "duplicate_fraction_of_output": 0.02,
+  "delayed_unique_event_count": 2450,
+  "delay_max_seconds": 900,
+  "delay_note": "Ordre d'émission simulé selon event_time + délai. Aucun arrival_time n'est persisté; le batch seul ne prouve pas la latence d'arrivée.",
+  "restaurant_count": 200,
+  "status_counts_raw": {
+    "CANCELLED": 2609,
+    "CREATED": 17560,
+    "DELIVERED": 14897,
+    "PICKED_UP": 14934
+  },
+  "status_counts_deduplicated": {
+    "CANCELLED": 2561,
+    "CREATED": 17187,
+    "DELIVERED": 14626,
+    "PICKED_UP": 14626
+  },
+  "event_time_min": "2026-11-15T08:00:00Z",
+  "event_time_max": "2026-11-15T18:06:20Z",
+  "reference_format": "JSON Lines (un objet par ligne), malgré l'extension restaurants.json",
+  "currency": "MAD"
+}

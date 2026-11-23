@@ -1,0 +1,12 @@
+[
+  "s3a://lake/silver/orders_history/city=Casablanca/part-00000-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet",
+  "s3a://lake/silver/orders_history/city=Casablanca/part-00001-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet",
+  "s3a://lake/silver/orders_history/city=Fès/part-00000-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet",
+  "s3a://lake/silver/orders_history/city=Fès/part-00001-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet",
+  "s3a://lake/silver/orders_history/city=Marrakech/part-00000-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet",
+  "s3a://lake/silver/orders_history/city=Marrakech/part-00001-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet",
+  "s3a://lake/silver/orders_history/city=Rabat/part-00000-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet",
+  "s3a://lake/silver/orders_history/city=Rabat/part-00001-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet",
+  "s3a://lake/silver/orders_history/city=Tanger/part-00000-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet",
+  "s3a://lake/silver/orders_history/city=Tanger/part-00001-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet"
+]

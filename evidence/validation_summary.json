@@ -1,0 +1,11 @@
+{
+  "unit_tests": {
+    "status": "PASSED",
+    "count": 9,
+    "command": "python -m unittest discover -s tests -v"
+  },
+  "spark_evidence": "verification.json",
+  "spark_status": "PASSED",
+  "spark_business_checks": 98,
+  "scope": "Parties 1, 2 et 3"
+}

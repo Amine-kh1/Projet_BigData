@@ -1,0 +1,42 @@
+== Parsed Logical Plan ==
+'Join UsingJoin(LeftOuter, [restaurant_id])
+:- Project [order_id#0, restaurant_id#1, customer_id#2, city#3, status#4, amount_mad#5, items_count#6, distance_km#7, courier_id#8, event_time#9]
+:  +- Filter (((((((((((((((((((((true AND isnotnull(order_id#0)) AND (length(trim(order_id#0, None)) > 0)) AND isnotnull(restaurant_id#1)) AND (length(trim(restaurant_id#1, None)) > 0)) AND isnotnull(customer_id#2)) AND (length(trim(customer_id#2, None)) > 0)) AND isnotnull(city#3)) AND (length(trim(city#3, None)) > 0)) AND isnotnull(courier_id#8)) AND (length(trim(courier_id#8, None)) > 0)) AND isnull(_corrupt_record#10)) AND status#4 IN (CANCELLED,CREATED,DELIVERED,PICKED_UP)) AND isnotnull(amount_mad#5)) AND (amount_mad#5 >= cast(cast(0 as decimal(1,0)) as decimal(12,2)))) AND isnotnull(items_count#6)) AND (items_count#6 > 0)) AND isnotnull(distance_km#7)) AND NOT isnan(distance_km#7)) AND (distance_km#7 >= cast(0 as double))) AND (distance_km#7 < Infinity)) AND isnotnull(event_time#9))
+:     +- Relation [order_id#0,restaurant_id#1,customer_id#2,city#3,status#4,amount_mad#5,items_count#6,distance_km#7,courier_id#8,event_time#9,_corrupt_record#10] json
++- ResolvedHint (strategy=broadcast)
+   +- Project [restaurant_id#115, name#116 AS restaurant_name#161, city#117 AS restaurant_city#162, category#118, latitude#119, longitude#120]
+      +- Relation [restaurant_id#115,name#116,city#117,category#118,latitude#119,longitude#120] json
+
+== Analyzed Logical Plan ==
+restaurant_id: string, order_id: string, customer_id: string, city: string, status: string, amount_mad: decimal(12,2), items_count: int, distance_km: double, courier_id: string, event_time: timestamp, restaurant_name: string, restaurant_city: string, category: string, latitude: double, longitude: double
+Project [restaurant_id#1, order_id#0, customer_id#2, city#3, status#4, amount_mad#5, items_count#6, distance_km#7, courier_id#8, event_time#9, restaurant_name#161, restaurant_city#162, category#118, latitude#119, longitude#120]
++- Join LeftOuter, (restaurant_id#1 = restaurant_id#115)
+   :- Project [order_id#0, restaurant_id#1, customer_id#2, city#3, status#4, amount_mad#5, items_count#6, distance_km#7, courier_id#8, event_time#9]
+   :  +- Filter (((((((((((((((((((((true AND isnotnull(order_id#0)) AND (length(trim(order_id#0, None)) > 0)) AND isnotnull(restaurant_id#1)) AND (length(trim(restaurant_id#1, None)) > 0)) AND isnotnull(customer_id#2)) AND (length(trim(customer_id#2, None)) > 0)) AND isnotnull(city#3)) AND (length(trim(city#3, None)) > 0)) AND isnotnull(courier_id#8)) AND (length(trim(courier_id#8, None)) > 0)) AND isnull(_corrupt_record#10)) AND status#4 IN (CANCELLED,CREATED,DELIVERED,PICKED_UP)) AND isnotnull(amount_mad#5)) AND (amount_mad#5 >= cast(cast(0 as decimal(1,0)) as decimal(12,2)))) AND isnotnull(items_count#6)) AND (items_count#6 > 0)) AND isnotnull(distance_km#7)) AND NOT isnan(distance_km#7)) AND (distance_km#7 >= cast(0 as double))) AND (distance_km#7 < Infinity)) AND isnotnull(event_time#9))
+   :     +- Relation [order_id#0,restaurant_id#1,customer_id#2,city#3,status#4,amount_mad#5,items_count#6,distance_km#7,courier_id#8,event_time#9,_corrupt_record#10] json
+   +- ResolvedHint (strategy=broadcast)
+      +- Project [restaurant_id#115, name#116 AS restaurant_name#161, city#117 AS restaurant_city#162, category#118, latitude#119, longitude#120]
+         +- Relation [restaurant_id#115,name#116,city#117,category#118,latitude#119,longitude#120] json
+
+== Optimized Logical Plan ==
+Project [restaurant_id#1, order_id#0, customer_id#2, city#3, status#4, amount_mad#5, items_count#6, distance_km#7, courier_id#8, event_time#9, restaurant_name#161, restaurant_city#162, category#118, latitude#119, longitude#120]
++- Join LeftOuter, (restaurant_id#1 = restaurant_id#115), rightHint=(strategy=broadcast)
+   :- Project [order_id#0, restaurant_id#1, customer_id#2, city#3, status#4, amount_mad#5, items_count#6, distance_km#7, courier_id#8, event_time#9]
+   :  +- Filter ((((((((((((((((((((isnotnull(order_id#0) AND (length(trim(order_id#0, None)) > 0)) AND isnotnull(restaurant_id#1)) AND (length(trim(restaurant_id#1, None)) > 0)) AND isnotnull(customer_id#2)) AND (length(trim(customer_id#2, None)) > 0)) AND isnotnull(city#3)) AND (length(trim(city#3, None)) > 0)) AND isnotnull(courier_id#8)) AND (length(trim(courier_id#8, None)) > 0)) AND isnull(_corrupt_record#10)) AND status#4 IN (CANCELLED,CREATED,DELIVERED,PICKED_UP)) AND isnotnull(amount_mad#5)) AND (amount_mad#5 >= 0.00)) AND isnotnull(items_count#6)) AND (items_count#6 > 0)) AND isnotnull(distance_km#7)) AND NOT isnan(distance_km#7)) AND (distance_km#7 >= 0.0)) AND (distance_km#7 < Infinity)) AND isnotnull(event_time#9))
+   :     +- Relation [order_id#0,restaurant_id#1,customer_id#2,city#3,status#4,amount_mad#5,items_count#6,distance_km#7,courier_id#8,event_time#9,_corrupt_record#10] json
+   +- Project [restaurant_id#115, name#116 AS restaurant_name#161, city#117 AS restaurant_city#162, category#118, latitude#119, longitude#120]
+      +- Filter ((length(trim(restaurant_id#115, None)) > 0) AND isnotnull(restaurant_id#115))
+         +- Relation [restaurant_id#115,name#116,city#117,category#118,latitude#119,longitude#120] json
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Project [restaurant_id#1, order_id#0, customer_id#2, city#3, status#4, amount_mad#5, items_count#6, distance_km#7, courier_id#8, event_time#9, restaurant_name#161, restaurant_city#162, category#118, latitude#119, longitude#120]
+   +- BroadcastHashJoin [restaurant_id#1], [restaurant_id#115], LeftOuter, BuildRight, false
+      :- Project [order_id#0, restaurant_id#1, customer_id#2, city#3, status#4, amount_mad#5, items_count#6, distance_km#7, courier_id#8, event_time#9]
+      :  +- Filter ((((((((((((((((((((isnotnull(order_id#0) AND (length(trim(order_id#0, None)) > 0)) AND isnotnull(restaurant_id#1)) AND (length(trim(restaurant_id#1, None)) > 0)) AND isnotnull(customer_id#2)) AND (length(trim(customer_id#2, None)) > 0)) AND isnotnull(city#3)) AND (length(trim(city#3, None)) > 0)) AND isnotnull(courier_id#8)) AND (length(trim(courier_id#8, None)) > 0)) AND isnull(_corrupt_record#10)) AND status#4 IN (CANCELLED,CREATED,DELIVERED,PICKED_UP)) AND isnotnull(amount_mad#5)) AND (amount_mad#5 >= 0.00)) AND isnotnull(items_count#6)) AND (items_count#6 > 0)) AND isnotnull(distance_km#7)) AND NOT isnan(distance_km#7)) AND (distance_km#7 >= 0.0)) AND (distance_km#7 < Infinity)) AND isnotnull(event_time#9))
+      :     +- FileScan json [order_id#0,restaurant_id#1,customer_id#2,city#3,status#4,amount_mad#5,items_count#6,distance_km#7,courier_id#8,event_time#9,_corrupt_record#10] Batched: false, DataFilters: [isnotnull(order_id#0), (length(trim(order_id#0, None)) > 0), isnotnull(restaurant_id#1), (length..., Format: JSON, Location: InMemoryFileIndex(1 paths)[s3a://lake/bronze/history/orders_history.jsonl], PartitionFilters: [], PushedFilters: [IsNotNull(order_id), IsNotNull(restaurant_id), IsNotNull(customer_id), IsNotNull(city), IsNotNul..., ReadSchema: struct<order_id:string,restaurant_id:string,customer_id:string,city:string,status:string,amount_m...
+      +- BroadcastExchange HashedRelationBroadcastMode(List(input[0, string, true]),false), [plan_id=330]
+         +- Project [restaurant_id#115, name#116 AS restaurant_name#161, city#117 AS restaurant_city#162, category#118, latitude#119, longitude#120]
+            +- Filter ((length(trim(restaurant_id#115, None)) > 0) AND isnotnull(restaurant_id#115))
+               +- FileScan json [restaurant_id#115,name#116,city#117,category#118,latitude#119,longitude#120] Batched: false, DataFilters: [(length(trim(restaurant_id#115, None)) > 0), isnotnull(restaurant_id#115)], Format: JSON, Location: InMemoryFileIndex(1 paths)[s3a://lake/reference/restaurants.json], PartitionFilters: [], PushedFilters: [IsNotNull(restaurant_id)], ReadSchema: struct<restaurant_id:string,name:string,city:string,category:string,latitude:double,longitude:dou...
+

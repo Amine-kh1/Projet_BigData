@@ -1,0 +1,13 @@
+[2026-11-23 00:07:13 UTC]  11MiB STANDARD bronze/history/orders_history.jsonl
+[2026-11-23 00:07:13 UTC]  26KiB STANDARD reference/restaurants.json
+[2026-11-23 00:14:03 UTC]     0B STANDARD silver/orders_history/_SUCCESS
+[2026-11-23 00:14:00 UTC] 135KiB STANDARD silver/orders_history/city=Casablanca/part-00000-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet
+[2026-11-23 00:14:01 UTC] 134KiB STANDARD silver/orders_history/city=Casablanca/part-00001-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet
+[2026-11-23 00:14:00 UTC] 142KiB STANDARD silver/orders_history/city=Fès/part-00000-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet
+[2026-11-23 00:14:02 UTC] 143KiB STANDARD silver/orders_history/city=Fès/part-00001-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet
+[2026-11-23 00:14:00 UTC] 139KiB STANDARD silver/orders_history/city=Marrakech/part-00000-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet
+[2026-11-23 00:14:02 UTC] 138KiB STANDARD silver/orders_history/city=Marrakech/part-00001-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet
+[2026-11-23 00:14:01 UTC] 138KiB STANDARD silver/orders_history/city=Rabat/part-00000-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet
+[2026-11-23 00:14:02 UTC] 142KiB STANDARD silver/orders_history/city=Rabat/part-00001-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet
+[2026-11-23 00:14:01 UTC] 136KiB STANDARD silver/orders_history/city=Tanger/part-00000-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet
+[2026-11-23 00:14:03 UTC] 137KiB STANDARD silver/orders_history/city=Tanger/part-00001-357be3de-d4b8-4cef-bda4-4ab385e1dea6.c000.snappy.parquet
